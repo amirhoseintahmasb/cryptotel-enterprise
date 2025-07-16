@@ -7,10 +7,6 @@
 [![Traefik](https://img.shields.io/badge/Traefik-Proxy-green.svg)](https://traefik.io/)
 [![Monitoring](https://img.shields.io/badge/Monitoring-Grafana%2BPrometheus-orange.svg)](https://grafana.com/)
 
-## 👨‍💻 About the Founder
-
-**Amirhosein Tahmasbzadeh** - Founder of Cryptotel Enterprise
-
 > *"Building the future of enterprise DevOps infrastructure, one container at a time."*
 
 This platform represents years of experience in DevOps engineering, container orchestration, and enterprise infrastructure management. It's designed to showcase real-world DevOps skills and serve as a foundation for collaborative development.
@@ -255,9 +251,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-**Amirhosein Tahmasbzadeh**
+**Amir Tahmasb**
 - GitHub: [@amirhosein-tahmasbzadeh](https://github.com/amirhosein-tahmasbzadeh)
-- Email: [contact@cryptotel.xyz](mailto:contact@cryptotel.xyz)
+- Email: [contact@cryptotel.xyz](mailto:amirh.tahmasb@gmail.com)
 - Website: [cryptotel.xyz](https://cryptotel.xyz)
 
 ---
