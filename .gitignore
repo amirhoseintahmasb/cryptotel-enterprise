@@ -1,0 +1,201 @@
+# Cryptotel Enterprise - Git Ignore File
+# Excludes sensitive data and unnecessary files from version control
+
+# ===== SENSITIVE DATA =====
+# SSL/TLS Certificates and Keys
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+*.der
+*.p7b
+*.p7c
+*.p7s
+*.p8
+*.p10
+*.spc
+*.sst
+*.cer
+*.crt
+*.key
+*.pem
+*.p12
+*.pfx
+*.der
+*.p7b
+*.p7c
+*.p7s
+*.p8
+*.p10
+*.spc
+*.sst
+*.cer
+
+# Private Keys and SSH Keys
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*.ppk
+ssh_host_*
+ssh_known_hosts
+
+# ===== CONFIGURATION FILES WITH SENSITIVE DATA =====
+# Environment files
+.env
+.env.local
+.env.production
+.env.staging
+.env.development
+*.env
+
+# Docker secrets
+secrets/
+docker-secrets/
+*.secret
+
+# Registry authentication
+auth/
+htpasswd
+*.htpasswd
+
+# Traefik configuration with sensitive data
+traefik/dynamic/
+traefik/certs/
+traefik/acme/
+
+# ===== LOGS AND TEMPORARY FILES =====
+# Log files
+*.log
+logs/
+*.out
+*.err
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Cache directories
+.cache/
+*.cache
+
+# ===== DOCKER AND CONTAINER DATA =====
+# Docker data directories
+docker-data/
+container-data/
+volumes/
+data/
+
+# Docker build context
+.dockerignore
+
+# ===== BACKUP FILES =====
+backups/
+*.backup
+*.bak
+*.old
+
+# ===== MONITORING DATA =====
+# Prometheus data
+monitoring/prometheus/data/
+monitoring/grafana/data/
+
+# ===== SYSTEM FILES =====
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ===== IDE AND EDITOR FILES =====
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ===== PACKAGE MANAGER FILES =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== PYTHON =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ===== RUBY =====
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
+
+# ===== JAVA =====
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# ===== DATABASE FILES =====
+*.db
+*.sqlite
+*.sqlite3
+
+# ===== CUSTOM CRYPTOTEL EXCLUSIONS =====
+# Enterprise specific sensitive data
+enterprise/secrets/
+enterprise/certs/
+enterprise/keys/
+
+# Registry data
+registry/data/
+registry/auth/
+
+# Portainer data
+portainer/data/
+
+# Traefik certificates
+traefik/certs/
+traefik/acme/
+
+# Monitoring data
+monitoring/data/
+monitoring/grafana/data/
+monitoring/prometheus/data/
+
+# Backup directories
+backups/
+
+# Scripts with hardcoded credentials
+scripts/credentials/
+scripts/secrets/
+
+# ===== GIT =====
+# Git hooks (if any contain sensitive data)
+.git/hooks/ 

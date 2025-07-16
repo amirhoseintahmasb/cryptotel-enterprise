@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  traefik:
+    image: traefik:v2.11
+    restart: always
+    command:
+      - --configFile=/etc/traefik/traefik.yml
+      - --log.level=DEBUG
+      - --providers.docker.swarmMode=true
+      - --providers.docker.exposedByDefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.scheme=https
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yml:/etc/traefik/traefik.yml:ro
+      - ./acme.json:/etc/traefik/acme.json
+      - ./certs:/certs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.api.rule=Host(`traefik.cryptotel.xyz`)"
+      - "traefik.http.routers.api.entrypoints=websecure"
+      - "traefik.http.routers.api.service=api@internal"
+      - "traefik.http.routers.api.tls=true"
+      - "traefik.http.routers.api.tls.certresolver=selfsigned"
+      - "traefik.http.routers.api.middlewares=traefik-auth"
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=admin:$$apr1$$4BncO9mH$$/NV9LUYGyxIHRkt6QAMMi."
+      - "traefik.http.services.api.loadbalancer.server.port=8080"
+    networks:
+      - traefik
+      - enterprise-network
+networks:
+  traefik:
+    external: true
+  enterprise-network:
+    external: true 

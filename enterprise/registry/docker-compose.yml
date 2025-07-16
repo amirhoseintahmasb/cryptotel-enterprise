@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  registry:
+    image: registry:2
+    container_name: enterprise-registry
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      REGISTRY_AUTH: htpasswd
+      REGISTRY_AUTH_HTPASSWD_REALM: "Enterprise Registry"
+      REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
+      REGISTRY_STORAGE_DELETE_ENABLED: "true"
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/domain.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/domain.key
+    volumes:
+      - registry_data:/var/lib/registry
+      - ./auth:/auth
+      - ./certs:/certs
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.registry.rule=Host(`registry.cryptotel.xyz`)"
+      - "traefik.http.routers.registry.entrypoints=websecure"
+      - "traefik.http.routers.registry.tls=true"
+      - "traefik.http.routers.registry.tls.certresolver=selfsigned"
+      - "traefik.http.services.registry.loadbalancer.server.port=5000"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+  registry-ui:
+    image: joxit/docker-registry-ui:latest
+    restart: always
+    environment:
+      REGISTRY_URL: http://registry.cryptotel.xyz
+      DELETE_IMAGES: "true"
+      SHOW_CONTENT_DIGEST: "true"
+    depends_on:
+      - registry
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.registry-ui.rule=Host(`registry-ui.cryptotel.xyz`)"
+      - "traefik.http.routers.registry-ui.entrypoints=websecure"
+      - "traefik.http.routers.registry-ui.tls=true"
+      - "traefik.http.routers.registry-ui.tls.certresolver=selfsigned"
+      - "traefik.http.services.registry-ui.loadbalancer.server.port=80"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+volumes:
+  registry_data:
+    driver: local
+
+networks:
+  traefik:
+    external: true 
