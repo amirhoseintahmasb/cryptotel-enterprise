@@ -1,19 +1,19 @@
-# 🚀 Cryptotel Enterprise - Multi-Project Management Platform
+# 🚀 Cryptotel - Multi-Project Management Platform
 
-> **Open Source Enterprise DevOps Platform** | Built with Docker Swarm, Traefik, and Modern DevOps Practices
+> **Open Source DevOps Platform** | Built with Docker Swarm, Traefik, and Modern DevOps Practices
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker](https://img.shields.io/badge/Docker-Swarm-blue.svg)](https://docs.docker.com/engine/swarm/)
 [![Traefik](https://img.shields.io/badge/Traefik-Proxy-green.svg)](https://traefik.io/)
 [![Monitoring](https://img.shields.io/badge/Monitoring-Grafana%2BPrometheus-orange.svg)](https://grafana.com/)
 
-> *"Building the future of enterprise DevOps infrastructure, one container at a time."*
+> *"Building the future of  DevOps infrastructure, one container at a time."*
 
-This platform represents years of experience in DevOps engineering, container orchestration, and enterprise infrastructure management. It's designed to showcase real-world DevOps skills and serve as a foundation for collaborative development.
+This platform represents years of experience in DevOps engineering, container orchestration, and  infrastructure management. It's designed to showcase real-world DevOps skills and serve as a foundation for collaborative development.
 
-## 🌟 What is Cryptotel Enterprise?
+## 🌟 What is Cryptotel ?
 
-Cryptotel Enterprise is a comprehensive, production-ready DevOps platform that demonstrates advanced container orchestration, service mesh implementation, and enterprise-grade monitoring. Built with modern DevOps practices, it serves as both a learning resource and a practical foundation for enterprise infrastructure.
+Cryptotel  is a comprehensive, production-ready DevOps platform that demonstrates advanced container orchestration, service mesh implementation, and -grade monitoring. Built with modern DevOps practices, it serves as both a learning resource and a practical foundation for  infrastructure.
 
 ### 🎯 Key Features
 
@@ -21,7 +21,7 @@ Cryptotel Enterprise is a comprehensive, production-ready DevOps platform that d
 - **🌐 Traefik Reverse Proxy**: Dynamic service discovery and SSL termination
 - **📊 Monitoring Stack**: Grafana + Prometheus + AlertManager for comprehensive observability
 - **🏗️ Private Registry**: Secure container image management
-- **🔐 Enterprise Security**: SSL/TLS, authentication, and access control
+- **🔐  Security**: SSL/TLS, authentication, and access control
 - **📈 Auto-scaling**: Built-in scaling capabilities for production workloads
 - **🔄 CI/CD Ready**: GitHub Actions integration for automated deployments
 
@@ -29,7 +29,7 @@ Cryptotel Enterprise is a comprehensive, production-ready DevOps platform that d
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Cryptotel Enterprise                     │
+│                    Cryptotel                      │
 ├─────────────────────────────────────────────────────────────┤
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
 │  │   Traefik   │  │   Registry  │  │  Portainer  │         │
@@ -63,8 +63,8 @@ Cryptotel Enterprise is a comprehensive, production-ready DevOps platform that d
 
 ```bash
 # Clone the repository
-git clone https://github.com/amirhosein-tahmasbzadeh/cryptotel-enterprise.git
-cd cryptotel-enterprise
+git clone https://github.com/amirhosein-tahmasbzadeh/cryptotel-.git
+cd cryptotel-
 
 # Make scripts executable
 chmod +x setup-infrastructure.sh
@@ -87,16 +87,16 @@ After installation, access your services at:
 ## 📁 Project Structure
 
 ```
-cryptotel-enterprise/
+cryptotel-/
 ├── 📄 README.md                    # This file
 ├── 📄 LICENSE                      # MIT License
 ├── 📄 .gitignore                   # Git ignore rules
-├── 📄 ENTERPRISE_GUIDE.md          # Comprehensive guide
+├── 📄 _GUIDE.md          # Comprehensive guide
 ├── 📄 QUICK_START.md               # Quick start guide
 ├── 🐳 setup-infrastructure.sh      # Main setup script
 ├── 🐳 setup-advanced-infrastructure.sh  # Advanced features
 ├── 🐳 setup-private-registry.sh    # Registry setup
-├── 📁 enterprise/                  # Enterprise configurations
+├── 📁 /                  #  configurations
 ├── 📁 monitoring/                  # Monitoring stack
 │   ├── grafana/
 │   ├── prometheus/
@@ -182,7 +182,7 @@ Pre-configured alerts for:
 ### GitHub Actions Workflow
 
 ```yaml
-name: Deploy to Cryptotel Enterprise
+name: Deploy to Cryptotel 
 on:
   push:
     branches: [main]
@@ -219,7 +219,7 @@ We welcome contributions! This is an open-source project designed to showcase De
 
 ## 📚 Documentation
 
-- **[Enterprise Guide](ENTERPRISE_GUIDE.md)**: Comprehensive platform documentation
+- **[ Guide](_GUIDE.md)**: Comprehensive platform documentation
 - **[Quick Start](QUICK_START.md)**: Get up and running quickly
 - **[API Documentation](docs/api.md)**: Service API references
 - **[Troubleshooting](docs/troubleshooting.md)**: Common issues and solutions
@@ -260,4 +260,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **⭐ Star this repository if you find it helpful!**
 
-**🔄 Stay updated with the latest DevOps practices and enterprise infrastructure patterns.** 
+**🔄 Stay updated with the latest DevOps practices and  infrastructure patterns.** 
